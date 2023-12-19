@@ -37,6 +37,9 @@ const eventSelect = document.getElementById('event-select');
 let categoriaValue = eventSelect.value;
 const configurarTamañoScrambleInput = document.querySelector(".configurar-tamaño-fuente-scramble");
 let configurarTamañoScramble = configurarTamañoScrambleInput.value;
+const mostrarListaDeTiempos = document.querySelector(".mostrar-lista-tiempos");
+const ocultarListaDeTiempos = document.querySelector(".ocultar-lista-de-tiempos");
+const listaMobile = document.querySelector(".lista-de-tiempos-mobile");
 
 // eventos inputs
 
@@ -732,14 +735,17 @@ function actualizarTamañoScramble() {
       }
       break;
     case "777":
-      if (anchoPantalla <= 767) {
-        tamañoMaximoScramble = 14;
+      if(anchoPantalla <= 305){
+        tamañoMaximoScramble = 10;
+        tamañoMinimoScramble = 5;
+      }else if (anchoPantalla <= 767) {
+        tamañoMaximoScramble = 16;
         tamañoMinimoScramble = 7;
       } else if (anchoPantalla <= 1023) {
         tamañoMaximoScramble = 16;
         tamañoMinimoScramble = 10;
       } else if (anchoPantalla <= 1279) {
-        tamañoMaximoScramble = 18;
+        tamañoMaximoScramble = 20;
         tamañoMinimoScramble = 14;
       } else {
         tamañoMaximoScramble = 20;
@@ -853,5 +859,32 @@ function recuperarTamañosDesdeLocalStorage() {
   }
 }
 
-// media queries 
+mostrarListaDeTiempos.addEventListener("click",()=>{
+  mostrarListaDeTiempos.style.display = "none";
+  ocultarListaDeTiempos.style.display = "block";
+  document.querySelector(".contenedor-scramble").style.opacity = "0";
+  document.querySelector(".contenedor-cronometro").style.display = "none";
+  document.querySelector(".total-de-tiempos").style.display = "none";
+  document.querySelector(".imagen-scramble").style.display = "none";
+  document.querySelector(".conjunto-total-de-datos").style.display = "none";
+  document.querySelector(".lista-de-tiempos").style.display = "block";
+  listaMobile.style.display = "flex";
+listaMobile.style.flexDirection = "column";
+listaMobile.style.position = "absolute";
+listaMobile.style.left = "50%";
+listaMobile.style.top = "50%";
+listaMobile.style.transform = "translate(-50%, -50%)";
 
+});
+
+ocultarListaDeTiempos.addEventListener("click",()=>{
+  mostrarListaDeTiempos.style.display = "block";
+  ocultarListaDeTiempos.style.display = "none";
+  document.querySelector(".contenedor-scramble").style.opacity = "1";
+  document.querySelector(".contenedor-cronometro").style.display = "block";
+  document.querySelector(".total-de-tiempos").style.display = "block";
+  document.querySelector(".imagen-scramble").style.display = "block";
+  document.querySelector(".conjunto-total-de-datos").style.display = "flex";
+  document.querySelector(".lista-de-tiempos").style.display = "none";
+  listaMobile.style.display = "none";
+});

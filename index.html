@@ -16,8 +16,8 @@
             <div class="seccion-configuracion">
                 <i class='bx bxs-cog icono-config'></i>
             </div>
-            
-            
+
+
             <div class="contenedor-scramble">
                 <select id="event-select" class="categoria">
                     <option value="222">2x2x2</option>
@@ -44,58 +44,64 @@
             </div>
             <div class="contenedor-de-datos-absoluto">
                 <div class="seccion-tiempos-y-promedios">
-                    <div class="lista-de-tiempos"></div>
-                    <div class="total-de-tiempos">
-                        <p>Tiempos realizados:</p>
-                        <p class="tiemposRealizados">0</p>
+                    <div class="lista-de-tiempos-mobile">
+                        <div class="lista-de-tiempos"></div>
+                        <button class="ocultar-lista-de-tiempos">Ocultar lista de tiempos</button>
                     </div>
-                    <div class="imagen-scramble">
-                        <twisty-player background="none" control-panel="none" visualization="2D" style="border: 2px solid var(--color-bordes); border-radius: 10px; width: 200px;
-                        height: 160px;"></twisty-player>
+                    <div class="otros-datos">
+                        <div class="total-de-tiempos">
+                            <p>Tiempos realizados:</p>
+                            <p class="tiemposRealizados">0</p>
+                        </div>
+                        <div class="imagen-scramble">
+                            <twisty-player background="none" control-panel="none" visualization="2D" style="border: 2px solid var(--color-bordes); border-radius: 10px; width: 200px;
+                            height: 160px;"></twisty-player>
+                        </div>
                     </div>
-            </div>
-            <div class="conjunto-de-datos">
-                <div class="datos-relevante">
-                    <p>Avg 12</p>
-                    <p class="Avg12">0</p>
+                    
                 </div>
-                <div class="datos-relevante">
-                    <p>Avg 5</p>
-                    <p class="Avg5">0</p>
-                </div>
+                <div class="conjunto-total-de-datos">
+                    <button class="mostrar-lista-tiempos">Mostrar lista de tiempos</button>
+                    <div class="conjunto-de-datos">
+                        <div class="datos-relevante">
+                            <p>Avg 12</p>
+                            <p class="Avg12">0</p>
+                        </div>
+                        <div class="datos-relevante">
+                            <p>Avg 5</p>
+                            <p class="Avg5">0</p>
+                        </div>
     
-                <div class="datos-relevante">
-                    <p>Avg Total</p>
-                    <p class="AvgT">0</p>
-                </div>
+                        <div class="datos-relevante">
+                            <p>Avg Total</p>
+                            <p class="AvgT">0</p>
+                        </div>
     
-                <div class="peor-tiempo">
-                    <div class="datos-relevante especial-tiempo">
-                        <p>Peor tiempo</p>
-                        <p class="tiempo-mas-lento">0</p>
+                        <div class="peor-tiempo">
+                            <div class="datos-relevante especial-tiempo">
+                                <p>Peor</p>
+                                <p class="tiempo-mas-lento">0</p>
+                            </div>
+                        </div>
+                        <div class="mejor-tiempo">
+                            <div class="datos-relevante especial-tiempo">
+                                <p>Pb</p>
+                                <p class="tiempo-mas-rapido mejor-tiempo-animacion">0</p>
+                            </div>
+                        </div>
+    
                     </div>
                 </div>
-                <div class="mejor-tiempo">
-                    <div class="datos-relevante especial-tiempo">
-                        <p>Mejor tiempo</p>
-                        <p class="tiempo-mas-rapido mejor-tiempo-animacion">0</p>
-                    </div>
-                </div>
-    
-            </div>
-            </div>
-            
-            
-            
-            
-        </div>
+                
+
+
     </section>
-    
+
     <div class="seccion-de-configuraciones">
         <div class="salir-de-configuraciones">
             <i class='bx bx-x x-confi'></i>
         </div>
-        
+
         <div class="titulo">
             Configuraciones
         </div>
@@ -108,7 +114,7 @@
                     <label for="inspeccionNo">No</label>
                     <input type="radio" id="inspeccionNo" name="inspeccionar">
                 </div>
-                
+
                 <div class="decimales campo-input">
                     Número de decimales:
                     <input type="number" id="decimales" value="1" max="3" min="0">
@@ -151,22 +157,24 @@
                             <button class="quitar-imagen-de-fondo">Quitar imagen de fondo</button>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="tamaños-de-fuente">
                     <div class="tamano-de-fuente-timer campo-input">
                         <label for="fuente-tamaño-timer">Tamaño de fuente del timer</label>
-                        <input type="number" id="fuente-tamaño-timer" class="configurar-tamaño-fuente-timer" max="200" min="30" value="150">
+                        <input type="number" id="fuente-tamaño-timer" class="configurar-tamaño-fuente-timer" max="200"
+                            min="30" value="150">
                     </div>
-                    <div class="tamano-de-fuente-scramble campo-input" >
+                    <div class="tamano-de-fuente-scramble campo-input">
                         <label for="fuente-tamaño-scramble">Tamaño de fuente del scramble</label>
-                        <input type="number" id="fuente-tamaño-scramble" class="configurar-tamaño-fuente-scramble" max="30" min="20" value="24">
+                        <input type="number" id="fuente-tamaño-scramble" class="configurar-tamaño-fuente-scramble"
+                            max="30" min="20" value="24">
                     </div>
                 </div>
             </div>
-            </div>
-            
-        
+        </div>
+
+
     </div>
 
 
@@ -174,9 +182,9 @@
         import { TwistyAlgViewer } from "https://cdn.cubing.net/js/cubing/twisty";
         import { randomScrambleForEvent } from "https://cdn.cubing.net/js/cubing/scramble";
         import { eventInfo } from "https://cdn.cubing.net/js/cubing/puzzles";
-    
+
         let event;
-    
+
         window.onload = function () {
             // Establecer event en "333" si no hay un parámetro "event" en la URL
             if (!new URL(location.href).searchParams.has("event")) {
@@ -188,7 +196,7 @@
                 // Obtener el valor de "event" de la URL
                 event = new URL(location.href).searchParams.get("event");
             }
-    
+
             // Si hay un evento en la URL, generar el scramble
             const twistyPlayer = document.querySelector("twisty-player");
             let scrambleElement = document.getElementById('scramble');
@@ -197,7 +205,7 @@
                 scrambleElement.id = 'scramble';
                 document.body.prepend(scrambleElement);
             }
-    
+
             // Función para generar el scramble y actualizar la URL
             async function generateScramble() {
                 const scramble = await randomScrambleForEvent(event);
@@ -205,32 +213,32 @@
                 twistyPlayer.alg = scramble;
                 scrambleElement.textContent = scramble;
             }
-    
+
             document.getElementById("generate-scramble").addEventListener("click", generateScramble);
-    
+
             document.getElementById("event-select").addEventListener("change", function () {
                 // Actualizar el valor de 'event' con la opción seleccionada
                 event = this.value;
-    
+
                 // Actualizar la URL con el nuevo valor de 'event'
                 var url = new URL(window.location.href);
                 url.searchParams.set("event", event);
                 window.history.replaceState({}, '', url);
-    
+
                 // Generar un nuevo scramble con el nuevo valor de 'event'
                 generateScramble();
             });
-    
+
             // Llamar a generateScramble después de verificar y actualizar la URL
             generateScramble();
-    
+
             window.generateScramble = generateScramble;
             const eventSelect = document.getElementById("event-select");
-            eventSelect.value = event; 
+            eventSelect.value = event;
         };
     </script>
-    
-    
+
+
     <script src="script.js"></script>
 </body>
 

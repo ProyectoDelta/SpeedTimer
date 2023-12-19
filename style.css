@@ -27,27 +27,33 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+
 section {
     max-height: calc(100vh - 10px);
 }
-.seccion-principal{
+
+.seccion-principal {
     max-height: calc(100vh - 10px);
 }
+
 .contenedor-cronometro {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.imagen-scramble{
+
+.imagen-scramble {
     margin-top: 10px;
 }
-.tiempo, .inspeccion {
+
+.tiempo,
+.inspeccion {
     font-size: 150px;
     font-family: "Roboto Slab";
 }
 
-#scramble{
+#scramble {
     font-family: "Lato";
     font-weight: 600;
     font-size: 24px;
@@ -57,17 +63,19 @@ section {
     text-align: center;
     max-height: 72px;
 }
-.contenedor-scramble{
+
+.contenedor-scramble {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
-#event-select{
+#event-select {
     height: 30px;
 }
-.categoria{
+
+.categoria {
     font-family: "Lato";
     border: none;
     -webkit-appearance: none;
@@ -75,7 +83,8 @@ section {
     appearance: none;
     text-align: center;
 }
-#generate-scramble{
+
+#generate-scramble {
     border: none;
     background-color: transparent;
     font-size: 20px;
@@ -84,7 +93,9 @@ section {
     z-index: 1000;
     color: var(--color-textos);
 }
-#decimales,.categoria,
+
+#decimales,
+.categoria,
 .configurar-tamaño-fuente-scramble,
 .configurar-tamaño-fuente-timer {
     background-color: transparent;
@@ -93,10 +104,12 @@ section {
     text-align: center;
     font-size: 20px;
 }
-.categoria option{
+
+.categoria option {
     color: #1b1b1b;
 }
-#generate-scramble:hover{
+
+#generate-scramble:hover {
     scale: 1.2;
 }
 
@@ -107,18 +120,20 @@ section {
     transition: .2s ease scale;
     margin: 10px;
 }
-.x-confi:hover{
+
+.x-confi:hover {
     scale: 1.2;
 }
 
-.contenedor-de-datos-absoluto{
+.contenedor-de-datos-absoluto {
     height: calc(100vh - 143px);
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}   
+}
+
 .seccion-tiempos-y-promedios {
     display: flex;
     flex-direction: column;
@@ -170,23 +185,26 @@ section {
     justify-content: space-around;
     width: 120px;
 }
-.x-especial{
+
+.x-especial {
     margin-left: 2px;
     transition: .2s scale ease;
 }
-.x-especial:hover{
+
+.x-especial:hover {
     scale: 1.2;
 }
+
 .conjunto-de-datos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
-  border: 2px var(--color-bordes) solid;
-  padding: 15px;
-  border-radius: 15px;
-  width: 381px;
-  align-items: center;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    border: 2px var(--color-bordes) solid;
+    padding: 15px;
+    border-radius: 15px;
+    width: 381px;
+    align-items: center;
+    justify-content: center;
 }
 
 .promedios {
@@ -203,6 +221,7 @@ section {
     margin-top: 10px;
     gap: 5px;
 }
+
 .seccion-configuracion {
     width: 100%;
     text-align: right;
@@ -219,6 +238,7 @@ section {
 .icono-config:hover {
     transform: scale(1.2);
 }
+
 .datos-relevante {
     display: flex;
     flex-direction: column;
@@ -263,6 +283,7 @@ section {
 .titulo-de-colore {
     margin: 5px 0;
 }
+
 .titulo {
     font-size: 50px;
     text-transform: uppercase;
@@ -303,7 +324,9 @@ section {
     width: 0;
     height: 0;
 }
-.boton-subir-img, .quitar-imagen-de-fondo{
+
+.boton-subir-img,
+.quitar-imagen-de-fondo {
     border: 1px solid var(--color-bordes);
     font-size: 18px;
     padding: 2px 5px;
@@ -313,12 +336,15 @@ section {
     color: var(--color-textos);
     background-color: transparent;
 }
-.quitar-imagen-de-fondo{
+
+.quitar-imagen-de-fondo {
     margin-top: 10px;
 }
-.subir-imagen-de-fondo{
+
+.subir-imagen-de-fondo {
     margin-top: 15px;
 }
+
 .rectangulo-negro-ciberPunk {
     background-color: #1b1b1b;
 }
@@ -388,60 +414,507 @@ section {
     scale: 1.2;
 }
 
-.seccion-de-configuraciones{
+.seccion-de-configuraciones {
     display: none;
 }
 
+.conjunto-total-de-datos button {
+    display: none;
+    border-radius: 15px;
+    border: 2px solid var(--color-bordes);
+    color: var(--color-textos);
+    background: var(--color-background);
+    padding: 5px;
+    font-family: "Lato";
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.ocultar-lista-de-tiempos {
+    display: none;
+    color: var(--color-textos);
+    background: var(--color-background);
+    border: 2px solid var(--color-bordes);
+    border-radius: 10px;
+    padding: 5px;
+    font-family: "Lato";
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
 /*Media queries*/
+@media only screen and (max-width: 425px) {
+    /* Estilos para pantallas pequeñas aquí */
+
+    .seccion-tiempos-y-promedios {
+        margin: 0;
+    }
+
+    .lista-de-tiempos {
+        display: none;
+    }
+
+    .icono-config {
+        font-size: 20px;
+        margin-right: 2px;
+        margin-top: -8px;
+    }
+
+    .contenedor-scramble {
+        gap: 1px;
+        margin-top: -5px;
+    }
+
+    #generate-scramble {
+        margin-right: 10px;
+    }
+
+    .tiempo {
+        cursor: pointer;
+    }
+
+    .contenedor-de-datos-absoluto {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 5px;
+        height: calc(100vh - 100px);
+        margin-bottom: auto;
+    }
+
+    .conjunto-de-datos {
+        gap: 3px;
+        padding: 5px;
+        margin: 0;
+        width: auto;
+    }
+
+    twisty-player {
+        height: 158px !important;
+        width: 195px !important;
+    }
+
+    .conjunto-total-de-datos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .conjunto-total-de-datos button {
+        display: block;
+    }
+    .titulo{
+        font-size: 25px;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     /* Estilos para pantallas pequeñas aquí */
 
-    .seccion-tiempos-y-promedios{
-        margin-right: 10px;
-        margin-bottom: 30px;
-        margin-top: 90px;
+    .seccion-tiempos-y-promedios {
+        margin: 0;
     }
-    .lista-de-tiempos{
-        height: 294px;
+
+    .lista-de-tiempos {
+        display: none;
     }
-    .icono-config{
+
+    .icono-config {
         font-size: 20px;
+        margin-right: 2px;
+        margin-top: -8px;
     }
-    .contenedor-scramble{
+
+    .contenedor-scramble {
         gap: 1px;
+        margin-top: -5px;
     }
-    #generate-scramble{
+
+    #generate-scramble {
         margin-right: 10px;
     }
-    .tiempo{
+
+    .tiempo {
         cursor: pointer;
+    }
+
+    .ocultar-lista-de-tiempos {
+        display: none;
+        color: var(--color-textos);
+        background: var(--color-background);
+        border: 2px solid var(--color-bordes);
+        border-radius: 10px;
+        padding: 5px;
+        font-family: "Lato";
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 10px;
+    }
+
+
+    .contenedor-de-datos-absoluto {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-around;
+        gap: 5px;
+        height: calc(100vh - 100px);
+        margin-bottom: auto;
+    }
+
+    .conjunto-de-datos {
+        gap: 3px;
+        padding: 5px;
+        margin: 0;
+        width: auto;
+    }
+
+    twisty-player {
+        height: 158px !important;
+        width: 195px !important;
+    }
+
+    .conjunto-total-de-datos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .conjunto-total-de-datos button {
+        display: block;
+        border-radius: 15px;
+        border: 2px solid var(--color-bordes);
+        color: var(--color-textos);
+        background: var(--color-background);
+        padding: 5px 15px;
+
+        font-family: "Lato";
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .titulo{
+        font-size: 40px;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+
     /* Estilos para tabletas en posición vertical aquí */
-    .seccion-tiempos-y-promedios{
+    .seccion-tiempos-y-promedios {
         margin-right: 10px;
-        margin-bottom: 30px;
-        margin-top: 90px;
+        margin-bottom: 20px;
+        margin-top: 200px;
     }
-    .lista-de-tiempos{
+
+    .lista-de-tiempos {
         height: 294px;
     }
-    .icono-config{
+
+    .icono-config {
         font-size: 20px;
     }
-    #generate-scramble{
+
+    #generate-scramble {
         margin-right: 10px;
     }
+
+    .conjunto-total-de-datos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 50px;
+    }
+    .seccion-tiempos-y-promedios{
+        width: 200px;
+        
+    }
+    twisty-player{
+        width: 200px !important;
+        height: 200px !important;
+    }
+    .conjunto-total-de-datos button{
+        display: block;
+    }
+    .lista-de-tiempos{
+        display: none;
+    }
+
+    
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1279px) {
+
     /* Estilos para tabletas en posición horizontal y pequeños portátiles aquí */
+    .seccion-tiempos-y-promedios {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+    }
+
+    #generate-scramble {
+        margin-right: 10px;
+    }
+    .conjunto-total-de-datos button{
+        display: none;
+    }
+    .conjunto-de-datos{
+        position: relative;
+        top: 150px;
+        width: 500px;
+    }
+    .lista-de-tiempos{
+        display: block;
+        margin-left: 50px;
+        height: 436px;
+    }
+    .otros-datos{
+        margin-right: 50px;
+        width: 250px;
+    }
+    twisty-player{
+        width: 250px !important;
+        height: 200px !important;
+    }
+    .titulo{
+        font-size: 50px;
+    }
+
+}
+
+@media screen and (max-width: 767px) and (orientation: landscape) {
+    .seccion-tiempos-y-promedios {
+        margin: 0;
+    }
+
+    .lista-de-tiempos {
+        display: none;
+    }
+
+    .icono-config {
+        font-size: 20px;
+        margin-right: 2px;
+        margin-top: -8px;
+    }
+
+    .contenedor-scramble {
+        gap: 1px;
+        margin-top: -5px;
+    }
+
+    #generate-scramble {
+        margin-right: 10px;
+    }
+
+    .tiempo {
+        cursor: pointer;
+    }
+
+    .ocultar-lista-de-tiempos {
+        display: none;
+        color: var(--color-textos);
+        background: var(--color-background);
+        border: 2px solid var(--color-bordes);
+        border-radius: 10px;
+        padding: 5px;
+        font-family: "Lato";
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 10px;
+    }
+
+
+    .contenedor-de-datos-absoluto {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 5px;
+        height: calc(100vh - 100px);
+        margin-bottom: auto;
+    }
+
+    .conjunto-de-datos {
+        gap: 3px;
+        padding: 5px;
+        margin: 0;
+        width: auto;
+    }
+
+    twisty-player {
+        height: 158px !important;
+        width: 195px !important;
+    }
+
+    .conjunto-total-de-datos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .conjunto-total-de-datos button {
+        display: block;
+        border-radius: 15px;
+        border: 2px solid var(--color-bordes);
+        color: var(--color-textos);
+        background: var(--color-background);
+        padding: 5px;
+        font-family: "Lato";
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) and (orientation: landscape) {
+    .seccion-tiempos-y-promedios {
+        margin: 0;
+    }
+
+    .lista-de-tiempos {
+        display: none;
+    }
+    .titulo{
+        font-size: 45px;
+    }
+    .icono-config {
+        font-size: 25px;
+        margin-right: 2px;
+        margin-top: -8px;
+    }
+
+    .contenedor-scramble {
+        gap: 1px;
+        margin-top: -5px;
+    }
+
+    #generate-scramble {
+        margin-right: 10px;
+    }
+
+    .tiempo {
+        cursor: pointer;
+    }
+
+    .contenedor-de-datos-absoluto {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 5px;
+        height: calc(100vh - 100px);
+        margin-bottom: auto;
+        width: 100%;
+    }
+
+    .conjunto-de-datos {
+        gap: 3px;
+        padding: 5px;
+        margin: 0;
+        width: auto;
+        position: static;
+    }
+
+    twisty-player {
+        height: 158px !important;
+        width: 195px !important;
+    }
+
+    .conjunto-total-de-datos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .conjunto-total-de-datos button {
+        display: block;
+    }
     .seccion-tiempos-y-promedios{
+        width: auto;
+        margin-left: 50px;
+    }
+    .conjunto-total-de-datos{
         margin-right: 50px;
     }
-    #generate-scramble{
+    .total-de-tiempos{
+        width: 250px;
+    }
+    twisty-player{
+        width: 250px !important;
+    }
+}
+@media screen and (max-width: 1280px) and (min-width: 1024px) and (orientation: landscape) {
+    .seccion-tiempos-y-promedios {
+        margin: 0;
+    }
+
+    .lista-de-tiempos {
+        display: none;
+    }
+    .titulo{
+        font-size: 50px;
+    }
+    .icono-config {
+        font-size: 25px;
+        margin-right: 2px;
+        margin-top: -8px;
+    }
+
+    .contenedor-scramble {
+        gap: 1px;
+        margin-top: -5px;
+    }
+
+    #generate-scramble {
         margin-right: 10px;
+    }
+
+    .tiempo {
+        cursor: pointer;
+    }
+
+    .contenedor-de-datos-absoluto {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 5px;
+        height: calc(100vh - 100px);
+        margin-bottom: auto;
+        width: 100%;
+    }
+
+    .conjunto-de-datos {
+        gap: 3px;
+        padding: 5px;
+        margin: 0;
+        width: auto;
+        position: static;
+    }
+
+    twisty-player {
+        height: 158px !important;
+        width: 195px !important;
+    }
+
+    .conjunto-total-de-datos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .conjunto-total-de-datos button {
+        display: block;
+    }
+    .seccion-tiempos-y-promedios{
+        width: auto;
+        margin-left: 50px;
+    }
+    .conjunto-total-de-datos{
+        margin-right: 50px;
+    }
+    .total-de-tiempos{
+        width: 250px;
+    }
+    twisty-player{
+        width: 250px !important;
     }
 }
